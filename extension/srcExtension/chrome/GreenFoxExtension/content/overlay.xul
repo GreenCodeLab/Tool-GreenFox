@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE overlay PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="greenfox.css" type="text/css"?>
+<overlay id="greenfoxextensionOverlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://greenfox/content/greenfox.js"></script>
+  <script type="application/x-javascript" src="chrome://greenfox/content/greenfox_collect.js"></script>
+  <script type="application/x-javascript" src="chrome://greenfox/content/greenfox_sampler.js"></script>
+  <script type="application/x-javascript" src="chrome://greenfox/content/greenfox_prefs.js"></script>
+ <statusbar id="status-bar">
+  <statusbarpanel insertafter="statusbar-display" id="greenfox-status-panel" >
+    <label value="GreenFox:" />
+    <image id="greenfox-status-image" class="greenfox-status-image-not_initialized" />
+    <label id="greenfox-status-label" value="addon not loaded!!!" />
+    <label id="greenfox-status-lastmeasure" value="" />
+    <button id="greenfox-status-button" label="Start" oncommand="greenfoxController.onToolbarClick()"/>
+    <button id="greenfox-status-button" label="Configure" oncommand="greenfoxController.onConfigure()"/>
+  </statusbarpanel>
+ </statusbar>
+    
+</overlay>

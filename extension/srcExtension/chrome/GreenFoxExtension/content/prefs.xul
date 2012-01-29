@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE dialog PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="greenfox_prefs.css" type="text/css"?>
+<dialog id="GreenFoxSetupDialog"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	title="GreenFox settings" 
+	width="620" height="270"
+	ondialogaccept="return greenfoxPrefsMgr.dialogSave();" onload="greenfoxPrefsMgr.dialogInit();"
+	orient="vertical">
+	<script type="application/x-javascript" src="greenfox_prefs.js" />
+	<tabbox>
+		<tabs>
+			<tab label="Settings"/>
+			<tab label="Advanced"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel orient="vertical">
+				<groupbox>
+					<caption label="Your challenger ID"/>
+					<textbox id="greenfox-challengerID" />
+					<description>Use your email address to identify you as a challenger.</description>
+				</groupbox>
+				<groupbox>
+					<caption label="Scoring"/>
+					<checkbox id="greenfox-collection-enabled" label="Send samples to Green Challenge scoring server"/>
+				</groupbox>
+			</tabpanel>
+			<tabpanel orient="vertical">
+				<groupbox>
+					<caption label="Collection API URL"/>
+					<textbox id="greenfox-endpoint" />
+					<description>Only change this if you are coding GreenFox, or if the collect server URL changed.</description>
+				</groupbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+
+	<spacer flex="1"/>
+	
+	<hbox align="center">
+		<button id="greenfox-factory-settings" label="Restore factory settings"
+			oncommand="greenfoxPrefsMgr.dialogReset();" />
+		<label id="greenfoxHelpLink" value="Help (in French)" onclick="window.open('https://sites.google.com/a/octo.com/green-challenge/outils/greenfox')"/>
+		<spacer flex="1" />
+		<button label="OK" dlgtype="accept" default="true" />
+		<button label="Cancel" dlgtype="cancel" />
+	</hbox>
+</dialog>

@@ -1,0 +1,28 @@
+.greenfox-status-image-not_initialized {
+   list-style-image: url("stop.png");
+}
+.greenfox-status-image-sampler_ko {
+   list-style-image: url("stop.png");
+}
+.greenfox-status-image-not_configured {
+   list-style-image: url("stop.png");
+}
+.greenfox-status-image-fail {
+   list-style-image: url("alert.png");
+}
+.greenfox-status-image-ready {
+   list-style-image: url("ok.png");
+}
+.greenfox-status-image-running {
+   list-style-image: url("run.png");
+}
+.greenfox-status-image-sending_sample {
+   list-style-image: url("network.png");
+}
+.greenfox-status-image-sampled {
+   list-style-image: url("ok.png");
+}
+.greenfox-status-image-sample_sent {
+   list-style-image: url("ok.png");
+}
+
