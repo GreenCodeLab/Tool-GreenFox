@@ -7,6 +7,7 @@ var sampler = {
 			greenfox;
 			return true;
 		} catch( e ) {
+			alert( e );
 			return false;
 		}		
 	},

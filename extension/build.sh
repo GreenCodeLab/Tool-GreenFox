@@ -6,14 +6,14 @@ cd srcExtension
 
 # refresh with latest DLL build
 echo "Copying last DLL build (if exist) ..."
-dll="../../xpcom/VCproject/Debug/GreenFox.dll"
-platform="WINNT_x86-msvc"
+dll="../../xpcom/VCproject/Debug/GreenCodeLabFox.dll"
 if [[ -a $dll ]]; then 
-	cp -f $dll platform/$platform/components/
+	cp -f $dll components/
+	echo "New DLL updated"
 fi
 
 # build XPI
 echo "Packaging XPI..."
-xpi_contents="chrome components/*.xpt defaults platform chrome.manifest install.rdf *.txt"
+xpi_contents="chrome components/*.xpt defaults platform components chrome.manifest install.rdf *.txt"
 zip -r ../build/greenfox.xpi $xpi_contents -x '*/.svn/*' -x '*~' 
 

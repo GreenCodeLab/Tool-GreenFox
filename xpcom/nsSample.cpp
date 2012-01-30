@@ -180,3 +180,22 @@ nsSampleImpl::WriteValue(const char* aPrefix)
 
     return NS_OK;
 }
+
+/* void start (); */
+NS_IMETHODIMP nsSampleImpl::Start()
+{
+    //TODO : implement here START logic
+
+	return NS_OK;
+}
+
+/* double stop (); */
+NS_IMETHODIMP nsSampleImpl::Stop(double *_retval NS_OUTPARAM)
+{
+	//TODO : implement here STOP logic
+	*_retval = (double)(666.33);
+
+
+
+    return NS_OK;
+}

@@ -42,7 +42,7 @@
 	<hbox align="center">
 		<button id="greenfox-factory-settings" label="Restore factory settings"
 			oncommand="greenfoxPrefsMgr.dialogReset();" />
-		<label id="greenfoxHelpLink" value="Help (in French)" onclick="window.open('https://sites.google.com/a/octo.com/green-challenge/outils/greenfox')"/>
+		<label id="greenfoxHelpLink" value="Help (in French)" onclick="window.open('http://greencodelab.fr')"/>
 		<spacer flex="1" />
 		<button label="OK" dlgtype="accept" default="true" />
 		<button label="Cancel" dlgtype="cancel" />

@@ -1,2 +1,3 @@
 content greenfox chrome/GreenFoxExtension/content/
 overlay chrome://browser/content/browser.xul chrome://greenfox/content/overlay.xul
+binary-component components/GreenCodeLabFox.dll

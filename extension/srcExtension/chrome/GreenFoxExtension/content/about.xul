@@ -8,7 +8,7 @@
 	<groupbox align="center" flex="1">
 		<vbox align="center">
 			<description id="title" value="GreenFox" />
-			<description id="author" value="OCTO Technology" />
+			<description id="author" value="Green Code Lab" />
 		</vbox>
 	</groupbox>
 	<description id="made" value="Made with D&amp;K Enterprise Framework ;-)" />

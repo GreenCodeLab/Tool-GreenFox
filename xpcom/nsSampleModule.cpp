@@ -38,6 +38,7 @@
 
 #include "mozilla/ModuleUtils.h"
 #include "nsIClassInfoImpl.h"
+#include "nsIScriptNameSpaceManager.h"
 
 #include "nsSample.h"
 
@@ -87,7 +88,7 @@ static const mozilla::Module::ContractIDEntry kSampleContracts[] = {
 // entries: this is just a sample of how you'd do it.
 // @see nsICategoryManager for information on retrieving category data.
 static const mozilla::Module::CategoryEntry kSampleCategories[] = {
-    { "my-category", "my-key", NS_SAMPLE_CONTRACTID },
+	{ JAVASCRIPT_GLOBAL_PROPERTY_CATEGORY, "greenfox", NS_SAMPLE_CONTRACTID },
     { NULL }
 };
 
