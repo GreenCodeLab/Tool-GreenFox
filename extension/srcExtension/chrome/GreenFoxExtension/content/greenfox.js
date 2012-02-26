@@ -120,9 +120,9 @@ var greenfoxController = {
     },
     
     onEnd: function() {
-    	var measure = this.getSampler().endMeasure()
+    	var measure = this.getSampler().endMeasure();
     	this.lastMeasure = new Number(measure / 10 / 1000).toFixed(1); // Convert thicks to ms
-    	this.setState('sampled')
+    	this.setState('sampled');
 
 		if( this.getCollect().willSendSamples() ) {
 			this.setState('sending_sample')

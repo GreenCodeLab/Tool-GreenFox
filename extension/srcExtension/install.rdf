@@ -12,8 +12,8 @@
            <!-- Firefox -->
            <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-                <em:minVersion>9.0</em:minVersion>
-                <em:maxVersion>9.0.*</em:maxVersion>
+                <em:minVersion>10.0</em:minVersion>
+                <em:maxVersion>10.0.*</em:maxVersion>
            </Description>
         </em:targetApplication>
 		<em:optionsURL>chrome://greenfox/content/prefs.xul</em:optionsURL>

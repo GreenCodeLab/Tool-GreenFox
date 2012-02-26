@@ -1,3 +1,3 @@
-gcc -c -DBUILDING_EXAMPLE_DLL library.c
+gcc -c library.c
 
-gcc -shared -o library.dll library.o -Wl
+gcc -shared -nostdlib -o library.dll library.o -Wl,-e_DllMain@12

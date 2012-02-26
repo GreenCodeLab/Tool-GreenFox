@@ -2,22 +2,59 @@
  * Gets CPU thicks measure using XPCOM component
  */
 var sampler = {
+
+	addMethod: null, //DEBUG
+	startMethod: null,
+
 	init: function() {
 		try {
-			greenfox;
+			
+			/* import js-ctypes */
+			Components.utils.import("resource://gre/modules/ctypes.jsm");
+			
+			AddonManager.getAddonByID("greenfox@octo.com", function(addon) {
+				var libcPath = addon.getResourceURI("components/library.dll");
+				
+				if (libcPath instanceof Components.interfaces.nsIFileURL) {
+				
+					var libc = ctypes.open(libcPath.file.path);
+
+					/* declare available functions */
+					
+					// addMethod : Debug test
+					addMethod = libc.declare("add", /* function name */
+							   ctypes.default_abi, /* call ABI */
+							   ctypes.int32_t, /* return type */
+							   ctypes.int32_t, /* argument type */
+							   ctypes.int32_t /* argument type */
+					);
+					  
+					// startMethod
+					// startMethod = libc.declare("start", /* function name */
+							   // ctypes.default_abi, /* call ABI */
+							   // ctypes.int32_t, /* return type */
+					// );
+
+				}
+			});
+
 			return true;
 		} catch( e ) {
 			alert( e );
 			return false;
 		}		
 	},
-	destroy: function() {},
+	destroy: function() {
+		libc.close(); //Closes cleanly the library opened through ctypes.open
+	},
 	startMeasure: function() {
-		greenfox.start();
+
+		// TODO : call start
+
 	},
 	endMeasure: function() {
-		var thicks = greenfox.stop();
-		return thicks;
+		//DEBUG
+		return 666666666;
 	},
 }
 
