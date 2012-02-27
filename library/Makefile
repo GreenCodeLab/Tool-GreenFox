@@ -1,3 +1,3 @@
-gcc -c library.c
+gcc -c greenfox.c
 
-gcc -shared -nostdlib -o library.dll library.o -Wl,-e_DllMain@12
+gcc -shared -o greenfox.dll greenfox.o -Wl,-e_DllMain@12

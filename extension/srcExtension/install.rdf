@@ -7,7 +7,7 @@
         <em:creator>Green Code Lab</em:creator>
         <em:homepageURL>http://greencodelab.fr/</em:homepageURL>
         <em:type>2</em:type> <!-- type=extension --> 
-        <em:unpack>true</em:unpack>
+        <em:unpack>true</em:unpack> <!-- Needed to use the DLL -->
         <em:targetApplication>
            <!-- Firefox -->
            <Description>
@@ -17,7 +17,6 @@
            </Description>
         </em:targetApplication>
 		<em:optionsURL>chrome://greenfox/content/prefs.xul</em:optionsURL>
-		<em:aboutURL/>
 		<em:iconURL>chrome://greenfox/content/logo-greenfox.png</em:iconURL>
 		<!--<em:updateURL>https://green-challenge.googlecode.com/files/greenfox-updates.rdf</em:update>-->
 		<em:hidden/>

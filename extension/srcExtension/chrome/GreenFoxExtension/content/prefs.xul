@@ -6,10 +6,13 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	title="GreenFox settings" 
-	width="620" height="270"
-	ondialogaccept="return greenfoxPrefsMgr.dialogSave();" onload="greenfoxPrefsMgr.dialogInit();"
+	width="200" height="130"
+	onload="greenfoxPrefsMgr.dialogInit();"
 	orient="vertical">
 	<script type="application/x-javascript" src="greenfox_prefs.js" />
+	
+	<!-- 
+	
 	<tabbox>
 		<tabs>
 			<tab label="Settings"/>
@@ -39,12 +42,16 @@
 
 	<spacer flex="1"/>
 	
+	-->
+	
 	<hbox align="center">
+	<!-- 
 		<button id="greenfox-factory-settings" label="Restore factory settings"
 			oncommand="greenfoxPrefsMgr.dialogReset();" />
+			-->
 		<label id="greenfoxHelpLink" value="Help" onclick="window.open('http://greencodelab.fr')"/>
 		<spacer flex="1" />
-		<button label="OK" dlgtype="accept" default="true" />
+		<!-- <button label="OK" dlgtype="accept" default="true" /> -->
 		<button label="Cancel" dlgtype="cancel" />
 	</hbox>
 </dialog>

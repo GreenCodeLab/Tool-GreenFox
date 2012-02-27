@@ -1,10 +1,11 @@
 /**
- * Gets CPU thicks measure using XPCOM component
+ * Gets CPU thicks measure using DLL
  */
 var sampler = {
-
-	addMethod: null, //DEBUG
+	libc: null,
 	startMethod: null,
+	stopMethod: null,
+	initialValue: 0,
 
 	init: function() {
 		try {
@@ -13,28 +14,26 @@ var sampler = {
 			Components.utils.import("resource://gre/modules/ctypes.jsm");
 			
 			AddonManager.getAddonByID("greenfox@octo.com", function(addon) {
-				var libcPath = addon.getResourceURI("components/library.dll");
+				var libcPath = addon.getResourceURI("components/greenfox.dll");
 				
 				if (libcPath instanceof Components.interfaces.nsIFileURL) {
 				
-					var libc = ctypes.open(libcPath.file.path);
+					libc = ctypes.open(libcPath.file.path);
 
 					/* declare available functions */
 					
-					// addMethod : Debug test
-					addMethod = libc.declare("add", /* function name */
-							   ctypes.default_abi, /* call ABI */
-							   ctypes.int32_t, /* return type */
-							   ctypes.int32_t, /* argument type */
-							   ctypes.int32_t /* argument type */
-					);
-					  
 					// startMethod
-					// startMethod = libc.declare("start", /* function name */
-							   // ctypes.default_abi, /* call ABI */
-							   // ctypes.int32_t, /* return type */
-					// );
-
+					startMethod = libc.declare("start", /* function name */
+						ctypes.default_abi, 			/* call ABI */
+						ctypes.int32_t 					/* return type */
+					);
+					
+					// stopMethod
+					stopMethod = libc.declare("stop", 	/* function name */
+						ctypes.default_abi, 			/* call ABI */
+						ctypes.int32_t, 				/* return type */
+						ctypes.int32_t 					/* argument type */
+					);
 				}
 			});
 
@@ -48,29 +47,10 @@ var sampler = {
 		libc.close(); //Closes cleanly the library opened through ctypes.open
 	},
 	startMeasure: function() {
-
-		// TODO : call start
-
+		initialValue = startMethod();
 	},
 	endMeasure: function() {
-		//DEBUG
-		return 666666666;
+		var finalValue = stopMethod(initialValue);
+		return finalValue;
 	},
 }
-
-/**
- * Gets CPU thicks measure. This objet is just a mock.
- */
-var mockSampler = {
-	init: function() {
-		return true;
-	},
-	destroy: function() {},
-	startMeasure: function() {
-	},
-	endMeasure: function() {
-		return Math.floor(Math.random() * 100000000);
-	},
-}
-
-

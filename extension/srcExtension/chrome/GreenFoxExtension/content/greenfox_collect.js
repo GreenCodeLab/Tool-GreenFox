@@ -28,32 +28,7 @@ var greenfoxCollect = {
 	 * @param sample sample (number)
 	 */
 	postSample: function(sample) {
-		
-		var endpoint = this.endpoint;
-		var challengerID = encodeURIComponent(this.challengerID);
-		var postDataString = 'challengerID='+challengerID+'&CPUCycles='+sample+'&source=GREEN_FOX';
-	
-		// Post data:
-		var xhr = new XMLHttpRequest();
-		try {
-			xhr.open('POST', endpoint, false );
-			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhr.setRequestHeader("Content-length", postDataString.length);
-			xhr.setRequestHeader("Connection", "close");
-			xhr.send(postDataString);
-		} catch( e ) {
-			window.alert('GreenFox failed to send sample, please check the network');
-			return false;
-		}
-		
-		if( xhr.status == 200 ) {
-			// Tutti va bene...
-			return true;
-		} else {
-			// Don't panic
-			window.alert('GreenFox failed to send sample. Status='+xhr.status+','+xhr.responseText+'\ndata: '+postDataString);
-			return false;
-		}
+		//removed
 	},
 }
 
