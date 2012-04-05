@@ -53,11 +53,12 @@ var greenfoxController = {
 			if( ! samplerOK ) {
 				this.setState("sampler_ko");
 			} else {
-				if( this.isConfigured() ) {
+				//No configuration as now, but could change in the future
+				//if( this.isConfigured() ) {
 					this.setState('ready');
-				} else {
-					this.setState('not_configured');
-				}
+				//} else {
+				//	this.setState('not_configured');
+				//}
 			}
 		} catch( e ) {
 			handleError(e);
