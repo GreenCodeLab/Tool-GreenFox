@@ -4,9 +4,10 @@ rm -fr build/*
 mkdir -p build
 cd srcExtension
 
-# refresh with latest DLL build
-echo "Copying last DLL build (if exist) ..."
-dll="../../library/greenfox.dll"
+# refresh with latest library built
+echo "Copying last library built (if exist) ..."
+# dll="../../library/greenfox.dll"
+dll="../../library/greenfox.so"
 if [[ -a $dll ]]; then 
 	cp -f $dll components/
 	echo "New DLL updated"
