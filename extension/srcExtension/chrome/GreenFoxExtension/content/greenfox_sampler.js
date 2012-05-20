@@ -14,7 +14,8 @@ var sampler = {
 			Components.utils.import("resource://gre/modules/ctypes.jsm");
 			
 			AddonManager.getAddonByID("greenfox@octo.com", function(addon) {
-				var libcPath = addon.getResourceURI("components/greenfox.so");
+				// var libcPath = addon.getResourceURI("components/greenfox.so"); //LINUX version
+				var libcPath = addon.getResourceURI("components/greenfox.dll"); //WINDOWS version
 				
 				if (libcPath instanceof Components.interfaces.nsIFileURL) {
 				

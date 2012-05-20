@@ -108,7 +108,27 @@ var greenfoxController = {
 	onToolbarClick: function() {
 		try {
 			var st = this.states[this.currentState]
-			eval('this.'+st.action+'()')
+			
+			switch(st.action) {
+			
+				case "onStart":
+				this.onStart();
+				break;
+				
+				case "onEnd":
+				this.onEnd();
+				break;
+				
+				case "onConfigure":
+				this.onConfigure();
+				break;
+				
+				case "noop":
+				default:
+				this.noop();
+				break;
+			}
+			
 		} catch( e ) {
 			handleError(e)
 		}
