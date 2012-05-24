@@ -2,7 +2,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>greenfox@octo.com</em:id>
         <em:name>GreenFox</em:name>
-        <em:version>0.1</em:version>
+        <em:version>0.2</em:version>
         <em:description>GreenFox, Green Code Lab Firefox AddOn.</em:description>
         <em:creator>Green Code Lab</em:creator>
         <em:homepageURL>http://greencodelab.fr/</em:homepageURL>
@@ -13,12 +13,11 @@
            <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                 <em:minVersion>4.0</em:minVersion>
-                <em:maxVersion>12.0.*</em:maxVersion>
+                <em:maxVersion>14.*</em:maxVersion>
            </Description>
         </em:targetApplication>
 		<em:optionsURL>chrome://greenfox/content/prefs.xul</em:optionsURL>
 		<em:iconURL>chrome://greenfox/content/logo-greenfox.png</em:iconURL>
 		<!--<em:updateURL>https://green-challenge.googlecode.com/files/greenfox-updates.rdf</em:update>-->
-		<em:hidden/>
     </Description>
 </RDF>
