@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
-        <em:id>greenfox@octo.com</em:id>
+	<em:id>greenfox@ogreencodelab.fr</em:id>
         <em:name>GreenFox</em:name>
         <em:version>0.2</em:version>
         <em:description>GreenFox, Green Code Lab Firefox AddOn.</em:description>
