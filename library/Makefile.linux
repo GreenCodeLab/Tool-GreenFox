@@ -1,0 +1,3 @@
+gcc -c greenfox.c
+
+gcc -shared -o greenfox.so greenfox.o -Wl
